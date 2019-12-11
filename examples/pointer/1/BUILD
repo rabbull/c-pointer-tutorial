@@ -1,4 +1,4 @@
 cc_binary (
-    name = "main",
+    name = "1",
     srcs = ["main.c"],
 )

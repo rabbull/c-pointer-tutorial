@@ -23,13 +23,13 @@
 
 \begin{document}
 
-\titlepage
+\frame{\titlepage}
 
 \begin{frame}
  \tableofcontents
 \end{frame}
 
-\section{定义}
+\section{指针}
 
 \begin{frame}
  \frametitle{定义}
@@ -37,8 +37,68 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{栗子}
- \lstinputlisting[style=cstyle]{examples/1/main/main.c}
+ \frametitle{用法}
+ \lstinputlisting[style=cstyle]{examples/pointer/1/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{四则运算}
+ \lstinputlisting[style=cstyle]{examples/pointer/2/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{四则运算}
+ \begin{itemize}
+  \item 指向类型 \(T\) 的指针与整数 \(i\) 的加法在指针的值上加了
+        \[offset = i \times sizeof(T)\]
+  \item 指针减法相当于其加法中的 \(i\) 取负值
+  \item 指针没有乘法和除法
+ \end{itemize}
+\end{frame}
+
+\section{数组}
+\begin{frame}
+ \frametitle{又一个栗子}
+ \lstinputlisting[style=cstyle]{examples/array/1/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{又一个栗子}
+ \begin{itemize}
+  \item 数组的值是一个指向数组首位元素的指针
+  \item 数组中相邻两元素地址之差恰是元素大小
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{显然}
+  \lstinputlisting[style=cstyle]{examples/array/2/main.c}
+\end{frame}
+
+\begin{frame}
+  \frametitle{显然}
+
+  数组名加下标可以得到该下标对应的元素的地址。
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{数组和指针的区别}
+  \lstinputlisting[style=cstyle]{examples/array/3/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{数组和指针的区别}
+ \begin{itemize}
+   \item 在使用 \(sizeof\) 求大小时两者处理方式不同
+   \item 没了
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{整活？}
+  \lstinputlisting[style=cstyle]{examples/array/4/main.c}
 \end{frame}
 
 \end{document}
