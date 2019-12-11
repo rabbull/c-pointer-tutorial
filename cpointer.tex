@@ -1,0 +1,44 @@
+\documentclass{beamer}
+\usepackage{xeCJK}
+\usepackage{listings}
+\usepackage{color}
+
+\setmonofont{Consolas}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+
+\lstdefinestyle{cstyle} {
+  language=C,
+  keywordstyle=\color{blue},
+  stringstyle=\color{orange},
+  numberstyle=\color{green},
+  frame=shadowbox,
+  basicstyle=\ttfamily
+}
+
+\author{刘子森}
+\title{指针}
+\date{\today}
+\institute{四川大学软件学院}
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}
+ \tableofcontents
+\end{frame}
+
+\section{定义}
+
+\begin{frame}
+ \frametitle{定义}
+ 指针是用来储存地址的变量。
+\end{frame}
+
+\begin{frame}
+ \frametitle{栗子}
+ \lstinputlisting[style=cstyle]{examples/1/main/main.c}
+\end{frame}
+
+\end{document}
