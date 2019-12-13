@@ -2,16 +2,21 @@
 \usepackage{xeCJK}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{dirtree}
 
 \setmonofont{Consolas}
 \setCJKmainfont{Noto Serif CJK SC}
 \setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+\usetheme{Madrid}
 
 \lstdefinestyle{cstyle} {
   language=C,
   keywordstyle=\color{blue},
-  stringstyle=\color{orange},
-  numberstyle=\color{green},
+  stringstyle=\color{violet},
+  numberstyle=\color{orange},
+  commentstyle=\color{gray},
   frame=shadowbox,
   basicstyle=\ttfamily
 }
@@ -72,33 +77,90 @@
 
 \begin{frame}
 
-  \frametitle{显然}
-  \lstinputlisting[style=cstyle]{examples/array/2/main.c}
+ \frametitle{显然}
+ \lstinputlisting[style=cstyle]{examples/array/2/main.c}
 \end{frame}
 
 \begin{frame}
-  \frametitle{显然}
+ \frametitle{显然}
 
-  数组名加下标可以得到该下标对应的元素的地址。
+ 数组名加下标可以得到该下标对应的元素的地址。
 
 \end{frame}
 
 \begin{frame}
-  \frametitle{数组和指针的区别}
-  \lstinputlisting[style=cstyle]{examples/array/3/main.c}
+ \frametitle{数组和指针的区别}
+ \lstinputlisting[style=cstyle]{examples/array/3/main.c}
 \end{frame}
 
 \begin{frame}
  \frametitle{数组和指针的区别}
  \begin{itemize}
-   \item 在使用 \(sizeof\) 求大小时两者处理方式不同
-   \item 没了
+  \item 在使用 \(sizeof\) 求大小时两者处理方式不同
+  \item 没了
  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{整活？}
-  \lstinputlisting[style=cstyle]{examples/array/4/main.c}
+ \frametitle{整活？}
+ \lstinputlisting[style=cstyle]{examples/array/4/main.c}
+\end{frame}
+
+\section{函数}
+\begin{frame}
+ \frametitle{函数指针}
+ 顾名思义：函数指针是指向函数的指针。
+ \lstinputlisting[style=cstyle]{examples/function/1/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{回调函数}
+
+ 假设我们实现了一种很厉害的基于比较和交换的排序算法，想要将其推广。我们希望允许用户对任何数据进行排序，包括整数、浮点数甚至结构体。
+
+\end{frame}
+
+\begin{frame}
+ \frametitle{回调函数}
+ \framesubtitle{给苹果按重量排序}
+
+ 调用关系：
+
+ \dirtree{%
+  .1 main.
+  .2 struct Apple.
+  .2 apple\_comp.
+  .2 sort.
+  .3 swap.
+ }
+\end{frame}
+
+\begin{frame}
+ \frametitle{回调函数}
+ \framesubtitle{给苹果按重量排序}
+
+ \lstinputlisting[style=cstyle, linerange={14-27}]{examples/function/2/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{回调函数}
+ \framesubtitle{给苹果按重量排序}
+
+ \lstinputlisting[style=cstyle, linerange={7-13, 28-33}]{examples/function/2/main.c}
+\end{frame}
+
+\begin{frame}
+ \frametitle{回调函数}
+ \framesubtitle{给苹果按重量排序}
+
+ \lstinputlisting[style=cstyle]{examples/function/2/sort.h}
+\end{frame}
+
+\begin{frame}
+ \frametitle{回调函数}
+ \framesubtitle{给苹果按重量排序}
+
+ \lstinputlisting[style=cstyle, linerange={21-31}]{examples/function/2/sort.c}
 \end{frame}
 
 \end{document}
