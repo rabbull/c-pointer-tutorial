@@ -163,4 +163,44 @@
  \lstinputlisting[style=cstyle, linerange={21-31}]{examples/function/2/sort.c}
 \end{frame}
 
+\section{应用}
+\begin{frame}
+  \frametitle{图书管理系统}
+  \framesubtitle{双向链表}
+
+  假设我们想用双向链表来存储书籍，需要保存的信息有书名（char[16]）、作者（char[16]）、ISBN 码（char[14]）。
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{双向链表}
+  \framesubtitle{一种朴素实现}
+
+  \lstinputlisting[style=cstyle, linerange={4-11, 40-46}]{examples/application/naivedoublylinkedlist/main.c}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{双向链表}
+  \framesubtitle{一种朴素实现}
+
+  缺点很明显：毫无拓展性。
+
+  如果需要用同样地数据结构来存储书架，存储读者数据，那么同样的函数要分别重写若干次。
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{双向链表}
+  \framesubtitle{Linux 的实现}
+  \lstinputlisting[style=cstyle, linerange={4-16}]{examples/application/linuxdoublylinkedlist/linkedlist.h}
+\end{frame}
+
+\begin{frame}
+  \frametitle{双向链表}
+  \framesubtitle{Linux 的实现}
+  \lstinputlisting[style=cstyle, linerange={5-11}]{examples/application/linuxdoublylinkedlist/main.c}
+  \lstinputlisting[style=cstyle, linerange={14-16}]{examples/application/linuxdoublylinkedlist/main.c}
+\end{frame}
+
 \end{document}
